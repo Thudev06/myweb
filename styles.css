@@ -173,7 +173,24 @@ section {
     background-repeat: no-repeat;
     background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
 }
-
+.galeria-container {
+    padding: 80px 20px;
+    
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/fondo-servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
+}
+.contacto-container {
+    padding: 80px 20px;
+    
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/fondo-servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
+}
 .titulo-seccion {
     text-align: center;
     margin-bottom: 40px;
@@ -334,4 +351,48 @@ footer {
     padding-top: 20px;
     font-size: 0.9rem;
     color: #bbb;
+}
+/* --- ESTILO FLOTANTE --- */
+.tarjeta-flotante {
+    display: block !important; /* Desactiva el modo de 'foto al lado' */
+    background: rgba(255, 255, 255, 0.15) !important; /* Fondo muy suave */
+    backdrop-filter: blur(12px); /* Desenfoque del fondo */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Borde tipo cristal */
+    border-radius: 20px !important;
+    text-align: center;
+    padding: 60px 40px;
+    max-width: 800px !important;
+    margin: 50px auto !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; /* Sombra que da altura */
+}
+
+/* Ajuste de textos para que resalten sobre la imagen oscura */
+.tarjeta-flotante h3 {
+    color: white !important;
+    font-size: 2.5rem !important;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra al texto para leer mejor */
+}
+
+.tarjeta-flotante p {
+    color: #f0f0f0 !important;
+    font-size: 1.2rem !important;
+    margin-bottom: 30px;
+}
+
+/* El botón naranja para que destaque */
+.boton-consulta {
+    display: inline-block;
+    background-color: orange !important;
+    color: #2c3242 !important;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.boton-consulta:hover {
+    transform: scale(1.1); /* El botón crece al tocarlo */
 }
