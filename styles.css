@@ -38,7 +38,7 @@ nav a:hover {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/fondo.jpg');
     background-size: cover;
     background-position: center;
-    height: 60vh; /* altura de la foto */
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -171,7 +171,7 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
+    background-attachment: fixed;
 }
 .galeria-container {
     padding: 80px 20px;
@@ -180,7 +180,7 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
+    background-attachment: fixed; 
 }
 .contacto-container {
     padding: 80px 20px;
@@ -189,7 +189,7 @@ section {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Opcional: Esto hace un efecto de parallax suave al hacer scroll */
+    background-attachment: fixed; 
 }
 .titulo-seccion {
     text-align: center;
@@ -201,27 +201,27 @@ section {
 .servicio-card {
     display: flex;
     background: rgb(255, 255, 255);
-    margin: 0 auto 30px auto; /* Centra la tarjeta y da espacio abajo */
+    margin: 0 auto 30px auto; 
     max-width: 900px;
     border-radius: 12px;
-    overflow: hidden; /* Para que la imagen no se salga de las esquinas redondeadas */
+    overflow: hidden; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s ease; /* ESTO HACE QUE LA ANIMACIÓN SEA SUAVE */
-    border-left: 0px solid rgb(124, 122, 162); /* Preparado para la animación */
+    transition: all 0.3s ease; 
+    border-left: 0px solid rgb(124, 122, 162); 
 }
 
 /* --- ESTO PASA CUANDO PONES EL MOUSE ENCIMA --- */
 .servicio-card:hover {
-    transform: translateX(15px); /* La tarjeta se desplaza un poquito a la derecha */
+    transform: translateX(15px); 
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    border-left: 10px solid rgb(83, 83, 145); /* Aparece una barra naranja lateral */
+    border-left: 10px solid rgb(83, 83, 145); 
     cursor: pointer;
 }
 
 .servicio-card img {
-    width: 300px; /* Tamaño fijo para la foto */
+    width: 300px; 
     height: 200px;
-    object-fit: cover; /* Evita que la foto se vea estirada */
+    object-fit: cover; 
 }
 
 .info-card {
@@ -259,39 +259,38 @@ section {
     }
 
     nav a {
-        margin: 5px 10px; /* Ajustamos márgenes de los links */
+        margin: 5px 10px; 
         font-size: 0.9rem;
     }
 
-    /* 2. Ajustar el Hero (Inicio) */
+    
     .hero {
-        height: 50vh; /* Más corto en móvil */
+        height: 50vh; 
     }
 
     .hero h1 {
         font-size: 1.8rem;
     }
 
-    /* 3. Ajustar las Tarjetas de Servicios */
+   
     .servicio-card {
-        flex-direction: column; /* Imagen arriba, texto abajo */
+        flex-direction: column; 
         height: auto;
         max-width: 95%;
     }
 
     .servicio-card img {
-        width: 100%; /* La foto ocupa todo el ancho arriba */
+        width: 100%; 
         height: 200px;
     }
 
     .info-card {
-        width: 100%; /* El texto ocupa todo el ancho abajo */
+        width: 100%; 
         padding: 20px;
     }
 
-    /* 4. Ajustar la Galería */
     .galeria {
-        grid-template-columns: repeat(1, 1fr); /* 1 columna en lugar de 3 */
+        grid-template-columns: repeat(1, 1fr); 
     }
 }
 .sobre-nosotros {
@@ -318,7 +317,7 @@ section {
     margin-bottom: 20px;
 }
 footer {
-    background-color: #2c3242; /* El mismo color oscuro de tu header */
+    background-color: #2c3242; 
     color: white;
     padding: 50px 20px 20px 20px;
     margin-top: 50px;
@@ -339,7 +338,7 @@ footer {
 }
 
 .footer-contacto a {
-    color: orange; /* Tu color de marca para resaltar el link */
+    color: orange; 
     text-decoration: none;
     font-weight: bold;
 }
@@ -354,25 +353,25 @@ footer {
 }
 /* --- ESTILO FLOTANTE --- */
 .tarjeta-flotante {
-    display: block !important; /* Desactiva el modo de 'foto al lado' */
-    background: rgba(255, 255, 255, 0.15) !important; /* Fondo muy suave */
-    backdrop-filter: blur(12px); /* Desenfoque del fondo */
+    display: block !important; 
+    background: rgba(255, 255, 255, 0.15) !important; 
+    backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Borde tipo cristal */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; 
     border-radius: 20px !important;
     text-align: center;
     padding: 60px 40px;
     max-width: 800px !important;
     margin: 50px auto !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; /* Sombra que da altura */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important; 
 }
 
-/* Ajuste de textos para que resalten sobre la imagen oscura */
+
 .tarjeta-flotante h3 {
     color: white !important;
     font-size: 2.5rem !important;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Sombra al texto para leer mejor */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
 }
 
 .tarjeta-flotante p {
@@ -381,7 +380,7 @@ footer {
     margin-bottom: 30px;
 }
 
-/* El botón naranja para que destaque */
+
 .boton-consulta {
     display: inline-block;
     background-color: orange !important;
@@ -394,5 +393,5 @@ footer {
 }
 
 .boton-consulta:hover {
-    transform: scale(1.1); /* El botón crece al tocarlo */
+    transform: scale(1.1); 
 }
