@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios | Vasquez</title>
+    <link rel="stylesheet" href="servicios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <h1>VASQUEZ</h1>
+            <span>OBRAS Y SOLUCIONES</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="servicios.html" class="active">SERVICIOS</a></li>
+                <li><a href="nosotros.html">PROYECTOS</a></li>
+                <li><a href="contacto.html">CONTACTO</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="services-header">
+        <div class="header-content">
+            <span class="line-text">NUESTRO PORTFOLIO TÉCNICO</span>
+            <h1>Soluciones Integrales</h1>
+        </div>
+    </section>
+
+<main class="services-gallery">
+        <div class="service-card" onclick="openModal('Albañilería', 'Especialistas en estructuras sólidas, tabiquería y cerramientos. Nuestra experiencia familiar de más de una década garantiza muros nivelados y acabados resistentes para cualquier tipo de edificación.')">
+            <img src="images/albanileria.jpg" alt="Albañilería">
+            <div class="card-overlay">
+                <div class="card-text">
+                    <i class="fas fa-hammer"></i>
+                    <h3>Albañilería</h3>
+                    <p>Click para ver detalles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="openModal('Instalaciones de Agua', 'Realizamos montajes completos de fontanería y saneamiento. Desde la instalación de tuberías en obra nueva hasta la reparación técnica y optimización de presión en viviendas y locales.')">
+            <img src="images/reformadebaño.jpg" alt="Fontanería">
+            <div class="card-overlay">
+                <div class="card-text">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Fontanería</h3>
+                    <p>Click para ver detalles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="openModal('Electricidad', 'Instalaciones eléctricas de baja tensión certificadas. Nos encargamos del cableado, cuadros de luces, boletines y soluciones de iluminación LED para maximizar el ahorro energético.')">
+            <img src="images/foto-estilizada.jpg" alt="Electricidad">
+            <div class="card-overlay">
+                <div class="card-text">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electricidad</h3>
+                    <p>Click para ver detalles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card" onclick="openModal('Telecomunicaciones', 'Expertos en conectividad. Instalamos redes de datos, fibra óptica, antenas y sistemas de seguridad por cámaras (CCTV) para que tu espacio esté siempre conectado y protegido.')">
+            <img src="images/teleco.jpg" alt="Telecomunicaciones">
+            <div class="card-overlay">
+                <div class="card-text">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Telecomunicaciones</h3>
+                    <p>Click para ver detalles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-card wide" onclick="openModal('Reformas Integrales', 'La solución completa. Coordinamos albañilería, fontanería y electricidad para renovar tu hogar o negocio de principio a fin, entregando un espacio listo para habitar sin que tengas que preocuparte por nada.')">
+            <img src="images/WhatsApp Image 2026-04-02 at 20.58.37.jpeg" alt="Reformas Integrales">
+            <div class="card-overlay">
+                <div class="card-text">
+                    <i class="fas fa-home"></i>
+                    <h3>Reformas Integrales</h3>
+                    <p>Click para ver detalles</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="servicesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div class="modal-line"></div>
+            <p id="modalDescription"></p>
+            <a href="contacto.html" class="modal-btn">SOLICITAR PRESUPUESTO</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('servicesModal').style.display = "flex";
+            // Difuminado suave del fondo para centrar la atención
+            document.querySelector('.services-gallery').style.filter = "blur(5px)";
+            document.querySelector('.navbar').style.filter = "blur(5px)";
+        }
+
+        function closeModal() {
+            document.getElementById('servicesModal').style.display = "none";
+            document.querySelector('.services-gallery').style.filter = "none";
+            document.querySelector('.navbar').style.filter = "none";
+        }
+
+        // Cerrar al hacer clic fuera de la caja blanca
+        window.onclick = function(event) {
+            let modal = document.getElementById('servicesModal');
+            if (event.target == modal) { closeModal(); }
+        }
+    </script>
+</body>
+</html>

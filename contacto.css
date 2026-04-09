@@ -1,0 +1,195 @@
+/* VARIABLES: Cambia los colores aquí para que afecten a todo */
+:root {
+    --color-fondo: #4a4a4a;   /* Gris oscuro de tu imagen */
+    --color-letras: #ffffff;  /* Blanco */
+    --color-acento: #007bff;  /* Azul para detalles (puedes cambiarlo) */
+    --fuente-principal: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-letras);
+    font-family: var(--fuente-principal);
+    overflow-x: hidden;
+}
+
+/* NAVEGACIÓN */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    animation: fadeInDown 1s ease;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+}
+
+.logo span {
+    font-size: 0.6rem;
+    display: block;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-letras);
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+
+nav ul li a:hover, .active {
+    opacity: 1;
+    border-bottom: 2px solid var(--color-letras);
+}
+
+/* SECCIÓN PRINCIPAL */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.content h4 {
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1.2s ease;
+}
+
+.content h2 {
+    font-size: 4rem;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1.5s ease;
+}
+
+/* BOTÓN CON ANIMACIÓN */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    transition: all 0.4s;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background: white;
+    color: var(--color-fondo);
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* imagen a los lados */
+.topographic-bg {
+    position: absolute;
+    top: 0;
+    width: 15%;
+    height: 100%;
+    background-image: url('images/fondo\ intermedio\ de\ pagina\ web.jpg'); /* Asegúrate que el nombre coincida */
+    background-size: cover;
+    opacity: 0.3;
+}
+.left { left: 0; }
+.right { right: 0; transform: scaleX(-1); }
+/* --- RESPONSIVE DESIGN (PARA CELULARES) --- */
+
+@media (max-width: 768px) {
+    /* Ajustes del Menú de Navegación */
+    .navbar {
+        flex-direction: column; /* El logo arriba, el menú abajo */
+        padding: 1.5rem 5%;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap; /* Si no caben, se ponen en dos filas */
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Ajustes de Títulos */
+    h1 {
+        font-size: 2rem !important; /* Títulos más pequeños para que no se corten */
+        letter-spacing: 5px !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Ajuste de las Grillas (Servicios y Proyectos) */
+    .services-gallery, .project-list, .experience-container, .about-section .container {
+        grid-template-columns: 1fr !important; /* TODO a una sola columna */
+        display: flex;
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .service-card, .project-item, .card {
+        width: 100% !important;
+        height: auto !important; /* Que crezcan según el contenido */
+        min-height: 350px;
+    }
+
+    .wide {
+        grid-column: span 1 !important; /* La tarjeta ancha ahora es normal */
+    }
+
+    /* Ajuste del Modal (Ventana Emergente) */
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    /* Ajuste de las secciones de texto e imagen alternadas */
+    .project-item, .service-block {
+        flex-direction: column !important; /* Imagen arriba, texto abajo siempre */
+    }
+
+    /* Botones más fáciles de tocar con el dedo */
+    .btn, .modal-btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}

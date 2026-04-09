@@ -1,0 +1,453 @@
+/* --- VARIABLES --- */
+:root {
+    --color-fondo-oscuro: #333333; /* Color oscuro base de tu diseño */
+    --color-texto-blanco: #ffffff;
+    --color-subtexto: rgba(255, 255, 255, 0.8);
+    --fuente-principal: 'Montserrat', sans-serif;
+    --color-acento: #00a8ff; /* Un azul sutil para hovers (opcional) */
+}
+
+/* --- RESET & BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-blanco);
+    font-family: var(--fuente-principal);
+    overflow-x: hidden;
+}
+
+/* --- NAVEGACIÓN (Elegante y Transparente) --- */
+.navbar {
+    position: absolute; /* Para que flote sobre la imagen hero */
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    z-index: 100; /* Asegura que esté encima de todo */
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.logo span {
+    font-size: 0.65rem;
+    display: block;
+    letter-spacing: 2.5px;
+    font-weight: 300;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1.2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-texto-blanco);
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+nav ul li a:hover, .active {
+    opacity: 1;
+}
+
+.active {
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.social-icons a {
+    color: var(--color-texto-blanco);
+    margin-left: 1.5rem;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--color-acento);
+}
+
+/* --- SECCIÓN HERO HOME (Inspiración Competencia) --- */
+.hero-home {
+    height: 100vh; /* Altura de toda la pantalla */
+    position: relative;
+    background-image: url('images/fondo\ intermedio\ de\ pagina\ web.jpg'); /* !!! CAMBIA ESTO POR TU IMAGEN !!! */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+/* Superposición oscura para legibilidad del texto */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Ajusta el 0.6 para más/menos oscuridad */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem; /* Texto grande de impacto */
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    text-transform: none; /* Mantén mayúsculas y minúsculas para elegancia */
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--color-subtexto);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 550px;
+}
+
+/* --- BOTONES --- */
+.action-buttons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: 0.4s;
+    border-radius: 4px; /* Un toque moderno sutil */
+}
+
+.btn-filled {
+    background-color: var(--color-texto-blanco);
+    color: var(--color-fondo-oscuro);
+    border: 2px solid var(--color-texto-blanco);
+}
+
+.btn-filled:hover {
+    background-color: transparent;
+    color: var(--color-texto-blanco);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--color-texto-blanco);
+    color: var(--color-texto-blanco);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-texto-blanco);
+    color: var(--color-fondo-oscuro);
+}
+
+/* --- PIE DE PÁGINA HOME --- */
+.home-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    z-index: 10;
+}
+
+.home-footer p {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+/* --- ANIMACIONES DE ENTRADA (DINAMISMO) --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0; /* Empieza oculto */
+}
+
+.fade-in-up-delayed {
+    animation: fadeInUp 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+.fade-in-up-delayed-more {
+    animation: fadeInUp 1s ease 1s forwards;
+    opacity: 0;
+}
+/* --- SECCIÓN MISIÓN Y VISIÓN --- */
+.about-section {
+    background-color: #f9f9f9; /* Blanco grisáceo muy elegante */
+    color: #333333;            /* Texto oscuro para contraste */
+    padding: 100px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-section .container {
+    display: flex;
+    gap: 50px;
+    max-width: 1100px;
+}
+
+.card {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Sombra muy suave */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto de flotado al pasar el mouse */
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    font-weight: 300;
+    line-height: 1.8;
+    color: #666;
+    font-size: 1rem;
+}
+
+.card .line {
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    margin: 25px auto 0;
+    transition: width 0.3s ease;
+}
+
+.card:hover .line {
+    width: 100px; /* La línea se alarga al hacer hover */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .about-section .container {
+        flex-direction: column;
+    }
+}
+/* --- SECCIÓN EXPERIENCIA --- */
+.experience-section {
+    background-color: #ffffff;
+    padding: 100px 10% 50px 10%;
+    color: #1a1a1a;
+}
+
+.exp-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.exp-text {
+    flex: 2;
+}
+
+.exp-text .subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #888;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.exp-text h2 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.exp-text h2 strong {
+    font-weight: 700;
+    color: #000;
+}
+
+.exp-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Rejilla de habilidades sutil */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.skill-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-item i {
+    color: #222; /* Color de los checks */
+    font-size: 0.8rem;
+}
+
+/* Cuadros de estadísticas */
+.exp-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stat-box {
+    background: #f9f9f9;
+    padding: 40px;
+    text-align: center;
+    border-left: 4px solid #1a1a1a;
+}
+
+.stat-box .number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.stat-box .label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 900px) {
+    .exp-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-box {
+        border-left: none;
+        border-bottom: 4px solid #1a1a1a;
+    }
+}
+/* --- RESPONSIVE DESIGN (PARA CELULARES) --- */
+
+@media (max-width: 768px) {
+    /* Ajustes del Menú de Navegación */
+    .navbar {
+        flex-direction: column; /* El logo arriba, el menú abajo */
+        padding: 1.5rem 5%;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+        flex-wrap: wrap; /* Si no caben, se ponen en dos filas */
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    /* Ajustes de Títulos */
+    h1 {
+        font-size: 2rem !important; /* Títulos más pequeños para que no se corten */
+        letter-spacing: 5px !important;
+    }
+
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Ajuste de las Grillas (Servicios y Proyectos) */
+    .services-gallery, .project-list, .experience-container, .about-section .container {
+        grid-template-columns: 1fr !important; /* TODO a una sola columna */
+        display: flex;
+        flex-direction: column;
+        padding: 20px 5%;
+    }
+
+    .service-card, .project-item, .card {
+        width: 100% !important;
+        height: auto !important; /* Que crezcan según el contenido */
+        min-height: 350px;
+    }
+
+    .wide {
+        grid-column: span 1 !important; /* La tarjeta ancha ahora es normal */
+    }
+
+    /* Ajuste del Modal (Ventana Emergente) */
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    /* Ajuste de las secciones de texto e imagen alternadas */
+    .project-item, .service-block {
+        flex-direction: column !important; /* Imagen arriba, texto abajo siempre */
+    }
+
+    /* Botones más fáciles de tocar con el dedo */
+    .btn, .modal-btn {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}
