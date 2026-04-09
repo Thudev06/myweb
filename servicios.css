@@ -276,3 +276,20 @@ nav ul li a { color: white; text-decoration: none; font-size: 0.8rem; letter-spa
         padding: 15px;
     }
 }
+/* Esto corrige el amontonamiento en móviles */
+@media (max-width: 600px) {
+    body, .hero-home { 
+        /* Mantener el color gris de base pero ajustar cómo se muestra la imagen */
+        background-attachment: scroll; 
+        background-image: url('images/topografia.jpg'); 
+        background-size: cover; /* Esto hace que la imagen "llene" sin aplastarse */
+        background-position: center;
+    }
+
+    /* Le damos un poco más de aire al texto para que no choque con las líneas */
+    .hero-content h1 {
+        padding: 0 10px;
+        font-size: 1.8rem !important; 
+        line-height: 1.3;
+    }
+}
